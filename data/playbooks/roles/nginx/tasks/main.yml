@@ -1,0 +1,21 @@
+- name: add user for nginx
+  user:
+    name: nginx
+
+- name: install nginx
+  apt:
+    name: nginx
+    state: latest
+
+- name: start nginx
+  service:
+    name: nginx
+    enabled: yes
+
+    #- name: add a config file of nginx
+    #  template:
+    #    src: nginx.conf.j2
+    #    dest: /etc/nginx/nginx.conf
+    #  notify:
+    #    - restart nginx
+
